@@ -6,6 +6,8 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![MCP](https://img.shields.io/badge/MCP-2024--11--05-orange.svg)](https://modelcontextprotocol.io)
 
+**🌐 [English Documentation](README_EN.md)** | **简体中文文档**
+
 ## ✨ 主要功能
 
 - 🖥️ **本地命令执行**: 支持在本地环境执行shell命令
@@ -312,6 +314,14 @@ mypy shell_mcp_server.py
 - [ ] 命令执行历史记录
 - [ ] 集群部署支持
 - [ ] 监控和指标收集
+
+## 📚 其他文档
+
+- [英文文档](README_EN.md) - English Documentation
+- [架构说明](ARCHITECTURE.md) - 系统架构和设计文档
+- [快速开始](QUICKSTART.md) - 5分钟快速上手指南
+- [配置指南](docs/configuration.md) - 详细配置说明
+- [API文档](docs/api.md) - 接口文档
 
 ---
 
