@@ -1419,3 +1419,40 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+"""
+#powershell 测试端口 
+Test-NetConnection -ComputerName 172.20.80.12 -Port 8000
+ 
+# 1. 启动服务器
+python terminal_mcp_server.py --mode sse --port 8000
+python terminal_mcp_server.py --mode sse --host 0.0.0.0 --port 8000
+
+
+# 测试 GET 请求（Cherry Studio 会先发送这个）
+curl http://localhost:8000/sse
+
+# 测试 POST 请求
+curl -X POST http://localhost:8000/sse \
+  -H "Content-Type: application/json" \
+  -d '{"jsonrpc":"2.0","method":"initialize","params":{},"id":1}'
+
+# 测试工具列表
+curl -X POST http://localhost:8000/sse \
+  -H "Content-Type: application/json" \
+  -d '{"jsonrpc":"2.0","method":"tools/list","params":{},"id":2}'
+
+
+
+优化代码中的错误，使其能正确被cherry studio等工具添加使用mcp功能
+
+
+# 2. 测试 SSE 连接（这会建立长连接）
+curl -H "Accept: text/event-stream" http://localhost:8000/sse
+
+# 3. 在另一个终端测试 POST 消息
+curl -X POST http://localhost:8000/sse \
+  -H "Content-Type: application/json" \
+  -d '{"jsonrpc":"2.0","method":"tools/list","params":{},"id":1}'
+"""

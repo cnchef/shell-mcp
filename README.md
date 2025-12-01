@@ -28,7 +28,7 @@
 1. **克隆仓库**
 
 ```bash
-git clone https://github.com/cnchenf/shell-mcp.git
+git clone https://github.com/cnchef/shell-mcp.git
 cd shell-mcp
 ```
 
