@@ -1,0 +1,72 @@
+{
+  "session_timeout": 1200,
+  "command_filter": {
+    "blacklist": [
+      "^\\s*rm\\s+-rf\\s+/(\\s|$)",
+      "^\\s*rm\\s+-rf\\s+/home",
+      "^\\s*rm\\s+-rf\\s+/etc",
+      "^\\s*rm\\s+-rf\\s+/boot",
+      "^\\s*rm\\s+-rf\\s+/var",
+      "^\\s*rm\\s+-rf\\s+/root",
+      "^\\s*rm\\s+-rf\\s+/usr",
+      "^\\s*rm\\s+-rf\\s+/lib",
+      "^\\s*rm\\s+-rf\\s+/opt",
+      "^\\s*rm\\s+-rf\\s+--no-preserve-root",
+      "^\\s*rm\\s+-fr\\s+--no-preserve-root",
+      "^\\s*mkfs\\.",
+      "^\\s*dd\\s+.*of=/dev/",
+      "^\\s*parted",
+      "^\\s*fdisk",
+      "^\\s*mklabel",
+      "^\\s*mkswap",
+      "^\\s*wipefs",
+      "^\\s*:\\(\\)\\{\\s*:\\|:\\s*;\\s*\\};:",
+      "^\\s*shutdown",
+      "^\\s*reboot",
+      "^\\s*halt",
+      "^\\s*poweroff",
+      "^\\s*init\\s+",
+      "^\\s*crontab\\s+-r",
+      "^\\s*userdel",
+      "^\\s*passwd\\s+root",
+      "^\\s*chmod\\s+777\\s+/",
+      "^\\s*chown\\s+.*:/",
+      "^\\s*>\\s*/dev/",
+      "^\\s*>\\s*/etc/",
+      "^\\s*>\\s*/boot/",
+      "^\\s*>\\s*/root/",
+      "^\\s*curl.*\\|.*sh",
+      "^\\s*wget.*\\|.*sh",
+      "^\\s*killall",
+      "^\\s*pkill",
+      "^\\s*kill\\s+-9\\s+1",
+      "^\\s*kill\\s+-9\\s+[0-9]+",
+      ".*;\\s*rm\\s+-rf",
+      ".*&&\\s*rm\\s+-rf",
+      ".*\\|\\s*sh\\s*$"
+    ],
+    "whitelist": []
+  },
+  "ssh": {
+    "default_key_file": "~/.ssh/id_rsa",
+    "timeout": 30,
+    "max_connections": 10
+  },
+  "servers": {
+    "web01": {
+      "executor": "ssh",
+      "host": "192.168.10.15",
+      "username": "root",
+      "auth_method": "ssh_key",
+      "password": "123456",
+      "port": 22
+    },
+    "localhost": {
+      "executor": "local"
+    }
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "terminal_mcp.log"
+  }
+}
